@@ -23,11 +23,16 @@ public class Inventory {
 	}
 
 	public int totalWeight() {
-		int currentWeight;
+		int currentWeight = 0;
 
 		for (Item c : inventory) {
 			currentWeight = currentWeight + c.getWeight();
 		}
 		return currentWeight;
 	}
+
+	public void print(Inventory i) {
+		System.out.format();
+	}
+
 }
