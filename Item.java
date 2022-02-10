@@ -11,6 +11,8 @@ public class Item {
 		Misc
 	}
 
+	//Constructor
+
 	public Item (enum itemType, String name, int weight, int value, int strength) {
 		this.itemType = itemType;
 		this.name = name;
@@ -18,7 +20,7 @@ public class Item {
 		this.value = value;
 		this.strength = strength;
 	}
-
+	
 	public int getWeight() {
 		return weight;
 	}
