@@ -5,16 +5,18 @@ public class Item {
 	int strength;
 	static int maxWeight;
 
-	public enum itemType {
-		Weapon,
-		Armor,
-		Misc
+
+	public enum ItemType {
+		WEAPON,
+		ARMOR,
+		MISC
 	}
 
+	ItemType t;
 	//Constructor
 
-	public Item (enum itemType, String name, int weight, int value, int strength) {
-		this.itemType = itemType;
+	public Item (ItemType type, String name, int weight, int value, int strength) {
+		t  = type;
 		this.name = name;
 		this.weight = weight;	
 		this.value = value;
@@ -22,12 +24,12 @@ public class Item {
 	}
 
 	public String getType() {
-		if (itemType == Weapon) {
+		if (t == ItemType.WEAPON) {
 			return "Weapon";
-		} else if (itemType == Armor) {
-			return "Armor"
+		} else if (t == ItemType.ARMOR) {
+			return "Armor";
 		} else {
-			return "Misc"
+			return "Misc";
 		}
 	}
 

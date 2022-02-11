@@ -1,7 +1,9 @@
 public class Main {
 
 	public static void main(String[] args) {
-		private Inventory inventory = new Inventory();
+		Inventory inventory = new Inventory();
+		inventory.add(ItemGenerator.generate());
+		print(inventory);
 	}
 }
 

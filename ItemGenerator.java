@@ -1,12 +1,13 @@
-public class ItemGenerator {
-	import java.util.Random;
+import java.util.Random;
 
-	Random rng = new Random();
+public class ItemGenerator {
+
+	static Random rng = new Random();
 
 
 	public static Item generate() {
 		int choose = rng.nextInt(3);
-		itemType s;
+		Item.ItemType s;
 		String n;
 		int w; //Weight
 		int v; //Value
@@ -15,7 +16,7 @@ public class ItemGenerator {
 //Using 0 for weapons, 1 for armor, 2 for misc
 
 		if (choose == 0) {
-			s = Weapon;
+			s = Item.ItemType.WEAPON;
 			choose = rng.nextInt(4);
 			if (choose  == 0) {
 				n = "The Ancient Battle Axe";
@@ -39,7 +40,7 @@ public class ItemGenerator {
 				st = 10;
 			}
 		}else if(choose == 1) {
-			s = Armor;
+			s = Item.ItemType.ARMOR;
 			choose = rng.nextInt(4);
 			if (choose == 0) {
 				n = "Leather Armor";
@@ -63,10 +64,10 @@ public class ItemGenerator {
 				st = 21;
 			}
 		} else {
-			s = Misc;
+			s = Item.ItemType.MISC;
 			choose = rng.nextInt(4);
 			if (choose == 0) {
-				n = "The Banana"
+				n = "The Banana";
 				w = 1;
 				v = 69420;
 				st = 0;
@@ -76,7 +77,7 @@ public class ItemGenerator {
 				v = 100;
 				st = 0;
 			} else if (choose == 2) {
-				n = "The Strangely Regular Spork;
+				n = "The Strangely Regular Spork";
 				w = 1;
 				v = 1;
 				st = 0;
@@ -88,6 +89,7 @@ public class ItemGenerator {
 			}
 		}
 		Item i = new Item(s, n, w, v, st );
+		return i;
 	}
 
 

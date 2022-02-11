@@ -1,4 +1,4 @@
-import java.util.ArrayLisy;
+import java.util.ArrayList;
 
 public class Inventory {
 	ArrayList<Item> inventory = new ArrayList<>();
@@ -14,11 +14,11 @@ public class Inventory {
 
 	public boolean add(Item i) {
 	
-		if (i.getWeight + Inventory.totalWeight() <= maxWeight) {
+		if (i.getWeight() + totalWeight() <= maxWeight) {
 			inventory.add(i);
 			return true;
 		} else {
-			return false
+			return false;
 		}
 	}
 
@@ -34,7 +34,7 @@ public class Inventory {
 	public void print(Inventory i) {
 		int invenCount = 1;
 		for (Item c : inventory) {
-			System.out.format("%d. %2s\t %10s %10d %10d %10d", invenCount, c.getName(), c.getType(), c.getWeight(), c.getValue(), c.getStrength()i);
+			System.out.format("%d. %2s\t %10s %10d %10d %10d", invenCount, c.getName(), c.getType(), c.getWeight(), c.getValue(), c.getStrength());
 			invenCount++;
 		}	
 	}
