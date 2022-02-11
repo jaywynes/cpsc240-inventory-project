@@ -20,7 +20,21 @@ public class Item {
 		this.value = value;
 		this.strength = strength;
 	}
-	
+
+	public String getType() {
+		if (itemType == Weapon) {
+			return "Weapon";
+		} else if (itemType == Armor) {
+			return "Armor"
+		} else {
+			return "Misc"
+		}
+	}
+
+	public String getName() {
+		return name;
+	}
+
 	public int getWeight() {
 		return weight;
 	}

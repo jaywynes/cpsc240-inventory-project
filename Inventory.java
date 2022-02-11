@@ -32,7 +32,11 @@ public class Inventory {
 	}
 
 	public void print(Inventory i) {
-		System.out.format();
+		int invenCount = 1;
+		for (Item c : inventory) {
+			System.out.format("%d. %2s\t %10s %10d %10d %10d", invenCount, c.getName(), c.getType(), c.getWeight(), c.getValue(), c.getStrength()i);
+			invenCount++;
+		}	
 	}
 
 }
