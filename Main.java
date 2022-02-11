@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		Inventory inventory = new Inventory();
+		Inventory myInventory = new Inventory();
 		int choice = 0;
 
 		while (choice != 6) {
@@ -19,9 +19,9 @@ public class Main {
 			choice = scan.nextInt();
 
 			if (choice == 1) {
-				Inventory.print(inventory);
+				Inventory.print(myInventory);
 			} else if (choice == 2) {
-				inventory.add(ItemGenerator.generate());
+				myInventory.add(ItemGenerator.generate());
 			} else if (choice == 3) {
 				System.out.println("Drop an item");
 
