@@ -12,22 +12,22 @@ public class Main {
 			System.out.println("1. View your Inventory");
 			System.out.println("2. Add a random Item");
 			System.out.println("3. Drop an item");
-			System.out.println("4. Equip a weapon");
+			System.out.println("4. Equip Weapon");
 			System.out.println("5. Equip Armor");
 			System.out.println("6. Quit");
 			System.out.print(": ");
 			choice = scan.nextInt();
 
 			if (choice == 1) {
-				Inventory.print(myInventory);
+				myInventory.print(myInventory);
 			} else if (choice == 2) {
 				myInventory.add(ItemGenerator.generate());
 			} else if (choice == 3) {
 				System.out.println("Drop an item");
-
+				myInventory.drop(myInventory);
 			} else if (choice == 4) {
 				System.out.println("Equip a Weapon");
-
+				myInventory.equipWeapon(myInventory);
 			} else if (choice == 5) {
 				System.out.println("Equip Armor");
 			} else if (choice == 6) {

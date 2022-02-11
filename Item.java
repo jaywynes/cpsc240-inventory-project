@@ -23,13 +23,13 @@ public class Item {
 		this.strength = strength;
 	}
 
-	public String getType() {
+	public ItemType getType() {
 		if (t == ItemType.WEAPON) {
-			return "Weapon";
+			return ItemType.WEAPON;
 		} else if (t == ItemType.ARMOR) {
-			return "Armor";
+			return ItemType.ARMOR;
 		} else {
-			return "Misc";
+			return ItemType.MISC;
 		}
 	}
 

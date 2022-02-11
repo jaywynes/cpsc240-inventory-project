@@ -19,7 +19,7 @@ public class ItemGenerator {
 			s = Item.ItemType.WEAPON;
 			choose = rng.nextInt(4);
 			if (choose  == 0) {
-				n = "The Ancient Battle Axe";
+				n = "The Ancient Axe";
 				w = 20;
 				v = 10;
 				st = 15;
@@ -58,7 +58,7 @@ public class ItemGenerator {
 				v = 40;
 				st = 14;
 			} else {
-				n = "Elven Armor";
+				n = "Light Elven Armor";
 				w = 15;
 				v = 100;
 				st = 21;
@@ -67,7 +67,7 @@ public class ItemGenerator {
 			s = Item.ItemType.MISC;
 			choose = rng.nextInt(4);
 			if (choose == 0) {
-				n = "The Banana";
+				n = "The Ripe Banana";
 				w = 1;
 				v = 69420;
 				st = 0;
@@ -77,7 +77,7 @@ public class ItemGenerator {
 				v = 100;
 				st = 0;
 			} else if (choose == 2) {
-				n = "The Strangely Regular Spork";
+				n = "The Regular Spork";
 				w = 1;
 				v = 1;
 				st = 0;
