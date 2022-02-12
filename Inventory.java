@@ -1,17 +1,26 @@
+/**
+  *Represents an Inventory, Item objects from Item.java stored in inventory array
+  *@author Jayden Wynes
+  *@author jwynes@mail.umw.edu
+  *@version 1.0
+  */
 import java.util.Scanner;
 
 import java.util.ArrayList;
 
 public class Inventory {
-	private	ArrayList<Item> inventory;
-	private int maxWeight;
-	private Item equippedWeapon;
-	private ArrayList<Item> weapons;
-	private Item equippedArmor;
-	private ArrayList<Item> armor;
+	private	ArrayList<Item> inventory; //Used to store Item objects
+	private int maxWeight; //Max weight of inventory
+	private Item equippedWeapon; //Item object with Weapon ItemType, set by equipWeapon method
+	private ArrayList<Item> weapons; // Used to store Items with Weapon ItemType that are in inventory, used in equipWeapon method
+	private Item equippedArmor; //Item object with Armor ItemType, set by equipArmor method
+	private ArrayList<Item> armor; //Used to store Items with Armor ItemType that are in inventory, used in equipArmor method
 	private Scanner scan = new Scanner(System.in);
 
-
+	/**
+	  *Default constructor for Inventory object
+	  *Includes ArrayList of Item objects
+	  */
 	public Inventory() {
 		maxWeight = 200;
 		equippedWeapon = null;
@@ -19,6 +28,10 @@ public class Inventory {
 		inventory = new ArrayList<Item>();
 	}
 
+	/**
+	  *Used to check and see if the Item created from generate method will fit in inventory, comparing current weight of items vs max weight
+	  *@return True if item was added, False if item wasn't added
+	  */
 	public boolean add(Item i) {
 	
 		if (i.getWeight() + totalWeight() <= maxWeight) {
@@ -31,6 +44,10 @@ public class Inventory {
 
 	}
 
+	/**
+	  *Method used to determine current weight of all Items in Inventory
+	  *@return Total weight of Items in inventory array for add method
+	  */
 	public int totalWeight() {
 		int currentWeight = 0;
 
@@ -40,6 +57,10 @@ public class Inventory {
 		return currentWeight;
 	}
 
+	/**
+	  *Method used to print out contents of inventory ArrayList
+	  *@param i Inventory object, using ArrayList of Items for printing
+	  */
 	public void print(Inventory i) {
 		int invenCount = 1;
 			System.out.format("   %4s\t %20s\t %5s\t %5s\t %n", "Name", "Weight", "Value", "Strength");
@@ -56,7 +77,10 @@ public class Inventory {
 		}	
 	}
 
-
+	/**
+	  *Method used to select an Item inside the inventory and remove it from the ArrayList
+	  *@param i Inventory object, using ArrayList of Items for printing and selection 
+	  */
 	public void drop(Inventory i) {
 		System.out.println("Please enter the number of which item you would like to drop");
 			System.out.format("   %4s\t %20s\t %5s\t %5s\t %n", "Name", "Weight", "Value", "Strength");
@@ -77,6 +101,10 @@ public class Inventory {
 		}
 	}
 
+	/**
+	  *Method prints Items in Inventory that have the WEAPON ItemType, prints them out, allows user to select one to equip
+	  *@param i Inventory object
+	  */
 	public void equipWeapon(Inventory i) {
 		System.out.format("   %4s\t %20s\t %5s\t %5s\t %n", "Name", "Weight", "Value", "Strength");
 		int invenCount = 1;
@@ -104,6 +132,10 @@ public class Inventory {
 	
 	}
 
+	/**
+	  *Method prints Items in Inventory that have the ARMOR ItemType, prints them out, allows user to select one to equip
+	  *@param i Inventory object
+	  */
 	public void equipArmor(Inventory i) {
 		System.out.format("   %4s\t %20s\t %5s\t %5s\t %n", "Name", "Weight", "Value", "Strength");
 		int invenCount = 1;

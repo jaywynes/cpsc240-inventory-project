@@ -1,10 +1,20 @@
+/**
+  *Creates a pseudo-randomly generated Item 
+  *Used in "Add a random item" option in Main file
+  *@author Jayden Wynes
+  *@author jwynes@mail.umw.edu
+  *@version 1.0
+  */
 import java.util.Random;
 
 public class ItemGenerator {
 
-	static Random rng = new Random();
+	private static Random rng = new Random();
 
-
+	/**
+	  *Method used to create pseudo-randomly generated Item
+	  *@return Item object, from hard-coded list below
+	  */
 	public static Item generate() {
 		int choose = rng.nextInt(3);
 		Item.ItemType s;
@@ -13,7 +23,7 @@ public class ItemGenerator {
 		int v; //Value
 		int st; //Strength
 
-//Using 0 for weapons, 1 for armor, 2 for misc
+		//Using 0 for weapons, 1 for armor, 2 for misc
 
 		if (choose == 0) {
 			s = Item.ItemType.WEAPON;
@@ -88,7 +98,7 @@ public class ItemGenerator {
 				st = 0;
 			}
 		}
-		Item i = new Item(s, n, w, v, st );
+		Item i = new Item(s, n, w, v, st ); //Item created from aboe if-else block, used for return statement
 		return i;
 	}
 

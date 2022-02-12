@@ -1,3 +1,10 @@
+/**
+  *Main method, presents main menu to user to select other methods to run from Inventory class
+  *@author Jayden Wynes
+  *@author jwynes@mail.umw.edu
+  *@version 1.0
+  */
+
 import java.util.Scanner;
 
 public class Main {
