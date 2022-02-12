@@ -7,11 +7,11 @@ public class Inventory {
 	private int maxWeight;
 	private Item equippedWeapon;
 	private ArrayList<Item> weapons;
-	private int equippedWeaponSlot;
 	private Item equippedArmor;
 	private ArrayList<Item> armor;
-	private int equippedArmorSlot;
 	private Scanner scan = new Scanner(System.in);
+
+
 	public Inventory() {
 		maxWeight = 200;
 		equippedWeapon = null;
@@ -44,7 +44,14 @@ public class Inventory {
 		int invenCount = 1;
 			System.out.format("   %4s\t %20s\t %5s\t %5s\t %n", "Name", "Weight", "Value", "Strength");
 		for (Item c : inventory) {
-			System.out.format("%d. %2s\t %5d\t %5d\t %5d\t %n", invenCount, c.getName(), c.getWeight(), c.getValue(), c.getStrength());
+			System.out.format("%d. %2s\t %5d\t %5d\t %5d\t", invenCount, c.getName(), c.getWeight(), c.getValue(), c.getStrength());
+			if (c == equippedWeapon) {
+				System.out.format("%s %n", "(Equipped Weapon)");
+			} else if (c == equippedArmor) {
+				System.out.format("%s %n", "(Equipped Armor)");
+			} else {
+				System.out.format("%n");
+			}
 			invenCount++;
 		}	
 	}
@@ -91,6 +98,32 @@ public class Inventory {
 			equippedWeapon = weapons.get(choice);
 			//equippedWeaponSlot =  
 			System.out.println("You have equiped " + equippedWeapon.getName());
+		}
+
+
+	
+	}
+
+	public void equipArmor(Inventory i) {
+		System.out.format("   %4s\t %20s\t %5s\t %5s\t %n", "Name", "Weight", "Value", "Strength");
+		int invenCount = 1;
+		armor = new ArrayList<Item>();
+		for (int x = 0;x < inventory.size(); x++) {
+			Item c = inventory.get(x);
+			if ( c.getType() == Item.ItemType.ARMOR) {
+				armor.add(c);
+				System.out.format("%d. %2s\t %5d\t %5d\t %5d\t %n", invenCount, c.getName(), c.getWeight(), c.getValue(), c.getStrength());
+				invenCount++;
+			}
+		}
+		System.out.println(invenCount + ". Cancel");
+		System.out.print(": ");
+		int choice = scan.nextInt() - 1 ;
+		if (choice + 1 == invenCount) {
+			System.out.println("Now exiting the armor equip menu");
+		}else {
+			equippedArmor = armor.get(choice);
+			System.out.println("You have equiped " + equippedArmor.getName());
 		}
 
 

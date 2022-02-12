@@ -1,9 +1,9 @@
 public class Item {
-	String name;
-	int weight;
-	int value;
-	int strength;
-	static int maxWeight;
+	private String name;
+	private int weight;
+	private int value;
+	private int strength;
+	private static int maxWeight;
 
 
 	public enum ItemType {

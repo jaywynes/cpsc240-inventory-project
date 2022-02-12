@@ -30,6 +30,7 @@ public class Main {
 				myInventory.equipWeapon(myInventory);
 			} else if (choice == 5) {
 				System.out.println("Equip Armor");
+				myInventory.equipArmor(myInventory);
 			} else if (choice == 6) {
 				System.out.println("Now exiting your inventory system");
 				break;
