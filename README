@@ -1,0 +1,1 @@
+This project is a mock inventory system. It allows the user to view their inventroy,add pseudo-random item that are generated in the ItemGenerator.java file, drop items, and equip a single weapon and armor. 
